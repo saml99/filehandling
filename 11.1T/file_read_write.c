@@ -4,14 +4,13 @@
 #include "file_input_output.h"
 
 int read_lines(FILE *file_ptr, my_string *array) {
-
   my_string text;
   int numberOfLines;
   int index = 0;
+  
   fscanf(file_ptr, "%d", &numberOfLines);
   printf("%d\n", numberOfLines);
   while (index < numberOfLines) {
-
     fscanf(file_ptr, "%s", &text.str);
     array[index] = text;
     index++;
@@ -20,8 +19,7 @@ int read_lines(FILE *file_ptr, my_string *array) {
   return numberOfLines;
 }
 
-void print_lines_to_terminal(my_string *array, numberOfLines) {
-
+void print_lines_to_terminal(my_string *array, int numberOfLines) {
     printf("The file contained: \n");
     for (int index = 0; index < numberOfLines; index++) {
       printf("%s\n", array[index].str);
